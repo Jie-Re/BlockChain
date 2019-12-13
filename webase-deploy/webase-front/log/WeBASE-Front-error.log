@@ -1,0 +1,24 @@
+2019-12-13 21:57:25.009 [pool-9-thread-1] ERROR TaskUtils$LoggingErrorHandler() - Unexpected error occurred in scheduled task.
+java.util.concurrent.ExecutionException: java.io.IOException: activeConnections isEmpty Requset send failed! Can not connect to nodes success, please checkout the node status and the sdk config!
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:357) ~[?:1.8.0_222]
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1895) ~[?:1.8.0_222]
+	at com.webank.webase.front.monitor.MonitorService.syncMonitorInfo(MonitorService.java:146) ~[WeBASE-Front.jar:?]
+	at sun.reflect.GeneratedMethodAccessor129.invoke(Unknown Source) ~[?:?]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_222]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_222]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65) ~[spring-context-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) [spring-context-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81) [spring-context-4.3.18.RELEASE.jar:4.3.18.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_222]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_222]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [?:1.8.0_222]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [?:1.8.0_222]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_222]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_222]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_222]
+Caused by: java.io.IOException: activeConnections isEmpty Requset send failed! Can not connect to nodes success, please checkout the node status and the sdk config!
+	at org.fisco.bcos.web3j.protocol.channel.ChannelEthereumService.send(ChannelEthereumService.java:96) ~[web3sdk-2.0.5.jar:?]
+	at org.fisco.bcos.web3j.protocol.Service.lambda$sendAsync$0(Service.java:24) ~[web3sdk-2.0.5.jar:?]
+	at org.fisco.bcos.web3j.utils.Async.lambda$run$0(Async.java:30) ~[web3sdk-2.0.5.jar:?]
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626) ~[?:1.8.0_222]
+	... 3 more
